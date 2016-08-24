@@ -1,0 +1,21 @@
+{
+  "name": "Polar Clock New Tab",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "A simple, customizable polar clock new tab extension.",
+  "author": "KathrynBrusewitz",
+  "incognito": "split",
+  "chrome_url_overrides" : {
+    "newtab": "tab.html"
+  },
+  "icons": {
+    "128": "icon.png"
+  }, 
+  "background": { 
+    "scripts" : ["jscolor.min.js", "script.js"],
+    "persistent": true
+  },
+  "permissions": [
+    "contextMenus"
+  ]
+}
