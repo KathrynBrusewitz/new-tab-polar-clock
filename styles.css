@@ -1,3 +1,9 @@
+body {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+
 #canvas {
   position: absolute;
   top: 0;
@@ -6,14 +12,5 @@
   right: 0;
   margin: auto; }
 
-#menu-button {
-	color: #888;
-	text-decoration: none; }
-
 .canvas-wrap { 
 	text-align: center; }
-
-.button-wrap {
- 	text-align: right; 
- 	font-size: 1.2em;
-	margin: 10px; }

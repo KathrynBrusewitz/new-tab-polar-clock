@@ -6,7 +6,15 @@
     var canvas = document.getElementById("canvas");
     var point = new Point(200, 200, 180);
     var clock = new PolarClock(canvas, point, 15, 2);
-    var inputs = document.getElementsByTagName("input");
+    var inputs = document.getElementsByClassName("barColor");
+    var bgImageURL = document.getElementById("bgImageURL");
+    var bgColor = document.getElementById("bgColor");
+
+    bgImageURL.addEventListener("change", updateBackgroundImage);
+    bgColor.addEventListener("change", updateBackgroundColor);
+
+    updateBackgroundImage();
+    updateBackgroundColor();
 
     for (var i = 0; i < inputs.length; i++) {
       clock.color[i] = "#" + inputs[i].value;
@@ -20,6 +28,17 @@
       var index = Array.prototype.indexOf.call(inputs, this);
       clock.color[index] = color;
     }
+
+    function updateBackgroundImage() {
+      var url = bgImageURL.value;
+      document.body.style.backgroundImage = "url('" + url + "')";
+    }
+
+    function updateBackgroundColor() {
+      var color = bgColor.value;
+      document.body.style.backgroundColor = "#" + color;
+    }
+
   };
   
   //--------------------------------------------------------------------------
@@ -75,7 +94,6 @@
   };
   
   /**
-   *
    * @return {Point}
    */
   PolarClock.prototype.getPoint = function() {
