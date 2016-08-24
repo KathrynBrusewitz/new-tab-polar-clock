@@ -6,30 +6,38 @@
     var canvas = document.getElementById("canvas");
     var point = new Point(200, 200, 180);
     var clock = new PolarClock(canvas, point, 15, 2);
-    
-    var inputs = document.getElementsByClassName("barColor");
+    var barColor = [
+      document.getElementById("barColor0"),
+      document.getElementById("barColor1"),
+      document.getElementById("barColor2"),
+      document.getElementById("barColor3"),
+      document.getElementById("barColor4"),
+      document.getElementById("barColor5")
+    ];
     var bgImageURL = document.getElementById("bgImageURL");
     var bgColor = document.getElementById("bgColor");
     var canvasOpacity = document.getElementById("canvasOpacity");
 
+    for (var i = 0; i < 6; i++) {
+      barColor[i].addEventListener("change", function() {
+        updateBarColor(this, barColor.indexOf(this));
+      });
+    }
     bgImageURL.addEventListener("change", updateBackgroundImage);
     bgColor.addEventListener("change", updateBackgroundColor);
     canvasOpacity.addEventListener("input", updateCanvasOpacity);
 
+    for (var i = 0; i < 6; i++) {
+      updateBarColor(barColor[i], i);
+    }
     updateBackgroundImage();
     updateBackgroundColor();
     updateCanvasOpacity();
 
-    for (var i = 0; i < inputs.length; i++) {
-      clock.color[i] = "#" + inputs[i].value;
-      inputs[i].addEventListener("change", updateBar);
-    }
-
     clock.start(25);
 
-    function updateBar(e) {
-      var color = e.target.style.backgroundColor;
-      var index = Array.prototype.indexOf.call(inputs, this);
+    function updateBarColor(object, index) {
+      var color = object.style.backgroundColor;
       clock.color[index] = color;
     }
 
@@ -81,7 +89,7 @@
     this.point = point;
     this.line = line;
     this.margin = margin;
-    this.color = color || ["#333", "#555", "#777", "#999", "#BBB", "#DDD"];
+    this.color = color || ["#333", "#555", "#777", "#000", "#BBB", "#999"];
   };
   
   /**
