@@ -16,6 +16,6 @@
     "persistent": true
   },
   "permissions": [
-    "contextMenus"
+    "storage"
   ]
 }
