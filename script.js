@@ -47,7 +47,7 @@ const saveSettings = () => {
     opacity: opacity.value,
   }, () => {
     // Let user know options were saved
-    status.textContent = 'Settings have been saved.';
+    status.textContent = 'Saved!';
     setTimeout(() => {
       status.textContent = '';
     }, 4000);
@@ -85,5 +85,5 @@ backgroundColor.addEventListener('change', () => {
 });
 
 backgroundImageURL.addEventListener('change', () => {
-  document.body.style.backgroundImageURL = backgroundImageURL.value;
+  document.body.style.backgroundImage = `url(${backgroundImageURL.value})`;
 });

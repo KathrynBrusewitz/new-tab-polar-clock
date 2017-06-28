@@ -24,10 +24,10 @@ body {
 #menu {
   background-color: rgba(255, 255, 255, 0.6);
   padding: 40px;
-  height: 100%;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
+  bottom: 0;
   width: 250px;
   font-size: 16px;
   z-index: 90;
@@ -74,23 +74,46 @@ body {
 }
 
 .btn-save {
-  border-color: #222;
-  color: #222;
+  border-color: #000;
+  color: #000;
+  opacity: .3;
   display: block;
   margin: 0 auto;
 }
 
 .btn-save:hover {
-  color: #777;
-  border-color: #777;
+  color: #222;
+  opacity: .8;
+  border-color: #222;
   cursor: pointer;
 }
 
 #status {
   margin-top: 1rem;
   color: #333;
+  opacity: .8;
   text-align: center;
   visibility: none;
+}
+
+.attribution {
+  padding: 30px 0;
+  text-align: center;
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  width: inherit;
+}
+
+.attribution a {
+  color: #000;
+  opacity: .3;
+  text-decoration: none;
+}
+
+.attribution a:hover {
+  opacity: .5;
+  font-weight: bold;
 }
 
 .hidden {
