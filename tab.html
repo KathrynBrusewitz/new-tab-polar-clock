@@ -5,26 +5,55 @@
   <title>New Tab</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-  <input id="barColor0" class="jscolor">
-  <input id="barColor1" class="jscolor">
-  <input id="barColor2" class="jscolor">
-  <input id="barColor3" class="jscolor">
-  <input id="barColor4" class="jscolor">
-  <input id="barColor5" class="jscolor">
-
-  <input id="bgImageURL" type="text">
-  <input id="bgColor" class="jscolor">
-  <input id="canvasOpacity" type="range">
+  <img id="menuButton" src="chevron-left.svg" type="image/svg+xml" />
+  <div id="menu" class="hidden">
+    <div class="option">
+      <input id="second" class="color" type="color" />
+      <label for="backgroundColor">Second</label>
+    </div>
+    <div class="option">
+      <input id="minute" class="color" type="color" />
+      <label for="backgroundColor">Minute</label>
+    </div>
+    <div class="option">
+      <input id="hour" class="color" type="color" />
+      <label for="backgroundColor">Hour</label>
+    </div>
+    <div class="option">
+      <input id="weekday" class="color" type="color" />
+      <label for="backgroundColor">Weekday</label>
+    </div>
+    <div class="option">
+      <input id="date" class="color" type="color" />
+      <label for="backgroundColor">Date</label>
+    </div>
+    <div class="option">
+      <input id="month" class="color" type="color" />
+      <label for="backgroundColor">Month</label>
+    </div>
+    <div class="option">
+      <input id="backgroundColor" class="color" type="color" />
+      <label for="backgroundColor">Background Color</label>
+    </div>
+    <div class="option">
+      <label for="opacity">Opacity</label>
+      <input id="opacity" class="full-input" type="range" min="0" max="100" />
+    </div>
+    <div class="option">
+      <label for="backgroundImageURL">Background Image URL</label>
+      <input id="backgroundImageURL" class="full-input" type="url" />
+    </div>
+    <button id="save" class="btn btn-save">Save Settings</button>
+    <div id="status"></div>
+  </div>
 
   <div class="canvas-wrap">
     <canvas id="canvas" width="400" height="400"></canvas>
   </div>
-  
-  <script src="jscolor.min.js"></script>
-  <script src="script.js"></script>
 
+  <script src="clock.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
