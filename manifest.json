@@ -12,7 +12,7 @@
     "128": "icon.png"
   }, 
   "background": { 
-    "scripts" : ["jscolor.min.js", "script.js"],
+    "scripts" : ["clock.js", "script.js"],
     "persistent": true
   },
   "permissions": [
