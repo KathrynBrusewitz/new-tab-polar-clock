@@ -11,6 +11,8 @@ This is just a development release. Download or clone this repo as an unpacked e
 3. Enable the developer mode at top right.
 4. Click `Load unpacked extension...` and select the source code folder.
 
+To toggle settings, just click on the clock.
+
 ## Screenshots
 
 ![Polar Clock Menu](./screenshots/polar-menu.png)
