@@ -1,13 +1,11 @@
 const canvas = document.getElementById('canvas');
 const point = new Point(200, 200, 180);
 const clock = new PolarClock(canvas, point, 15, 2);
-const menuButton = document.getElementById('menuButton');
 const menu = document.getElementById('menu');
-const status = document.getElementById('status');
-let menuIsOpen = false;
 const backgroundImageURL = document.getElementById('backgroundImageURL');
 const opacity = document.getElementById('opacity');
 const backgroundColor = document.getElementById('backgroundColor');
+const save = document.getElementById('save');
 const barColor = [
   document.getElementById('second'),
   document.getElementById('minute'),
@@ -47,17 +45,15 @@ const saveSettings = () => {
     opacity: opacity.value,
   }, () => {
     // Let user know options were saved
-    status.textContent = 'Saved!';
+    save.textContent = 'Saved!';
     setTimeout(() => {
-      status.textContent = '';
-    }, 4000);
+      save.textContent = 'Save Settings';
+    }, 2000);
   });
   restoreSettings();
 };
 
 const toggleMenu = () => {
-  menuIsOpen = !menuIsOpen;
-  menuButton.src = menuIsOpen ? 'chevron-right.svg' : 'chevron-left.svg';
   menu.classList.toggle('hidden');
 };
 
@@ -65,9 +61,9 @@ document.body.onload = () => {
   clock.start(25);
 };
 
-menuButton.addEventListener('click', toggleMenu);
+canvas.addEventListener('click', toggleMenu);
 document.addEventListener('DOMContentLoaded', restoreSettings);
-document.getElementById('save').addEventListener('click', saveSettings);
+save.addEventListener('click', saveSettings);
 
 
 barColor.forEach((element, index) => {

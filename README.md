@@ -24,5 +24,3 @@ This is just a development release. Download or clone this repo as an unpacked e
 [Chrome.storage API](https://developer.chrome.com/extensions/storage)
 
 [Canvas Polar Clock](https://codepen.io/pankajparashar/pen/sIpyw)
-
-[jscolor Color Picker](http://jscolor.com/)

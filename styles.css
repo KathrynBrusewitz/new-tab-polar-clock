@@ -14,13 +14,6 @@ body {
   top: 0;
 }
 
-#menuButton {
-  padding: 10px;
-  position: fixed;
-  right: 0;
-  z-index: 100;
-}
-
 #menu {
   background-color: rgba(255, 255, 255, 0.6);
   padding: 40px;
@@ -79,6 +72,7 @@ body {
   opacity: .3;
   display: block;
   margin: 0 auto;
+  width: 100%;
 }
 
 .btn-save:hover {
@@ -86,14 +80,6 @@ body {
   opacity: .8;
   border-color: #222;
   cursor: pointer;
-}
-
-#status {
-  margin-top: 1rem;
-  color: #333;
-  opacity: .8;
-  text-align: center;
-  visibility: none;
 }
 
 .attribution {
@@ -113,7 +99,9 @@ body {
 
 .attribution a:hover {
   opacity: .5;
-  font-weight: bold;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .hidden {
