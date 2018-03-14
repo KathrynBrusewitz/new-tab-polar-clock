@@ -15,7 +15,7 @@ body {
 }
 
 #menu {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(0, 0, 0, 0.616);
   padding: 40px;
   position: fixed;
   right: 0;
@@ -32,6 +32,10 @@ body {
 
 .option .color {
   margin-right: 10px;
+}
+
+.option label {
+  color: rgb(255, 255, 255);
 }
 
 .full-input {
@@ -67,8 +71,8 @@ body {
 }
 
 .btn-save {
-  border-color: #000;
-  color: #000;
+  border-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   opacity: .3;
   display: block;
   margin: 0 auto;
@@ -76,9 +80,9 @@ body {
 }
 
 .btn-save:hover {
-  color: #222;
+  color: rgb(255, 255, 255);
   opacity: .8;
-  border-color: #222;
+  border-color: rgb(255, 255, 255);
   cursor: pointer;
 }
 
@@ -92,7 +96,7 @@ body {
 }
 
 .attribution a {
-  color: #000;
+  color: rgb(255, 255, 255);
   opacity: .3;
   text-decoration: none;
 }
@@ -108,6 +112,23 @@ body {
   display: none;
 }
 
+.pointer:hover {
+  cursor: pointer;
+}
+
 .canvas-wrap {
   text-align: center;
+}
+
+input[type="color"] {
+	-webkit-appearance: none;
+	border: none;
+	width: 10px;
+	height: 10px;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
 }
