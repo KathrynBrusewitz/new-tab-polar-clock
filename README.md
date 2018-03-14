@@ -1,10 +1,14 @@
 # Polar Clock New Tab
 
-A simple new tab page chrome extension based on [Pankaj Parashar's Canvas Polar Clock](https://codepen.io/pankajparashar/pen/sIpyw). Bar colors are customizable and background can be changed to either a color or an image URL.
+A simple new tab page chrome extension based on [Pankaj Parashar's Canvas Polar Clock](https://codepen.io/pankajparashar/pen/sIpyw). Lots of options to change to your taste.
+
+![Polar Clock New Tab 1](./screenshots/polar-tab-example-1.gif)
+
+![Polar Clock New Tab 2](./screenshots/polar-tab-example-2.gif)
 
 ## Installing
 
-This is just a development release. Download or clone this repo as an unpacked extension.
+This is just a development release for now. Download or clone this repo as an unpacked extension.
 
 1. If you downloaded the code, unzip the file.
 2. Open (chrome://extensions/) or select the menu `Window > Extensions`.
@@ -13,13 +17,7 @@ This is just a development release. Download or clone this repo as an unpacked e
 
 To toggle settings, just click on the clock.
 
-## Screenshots
-
-![Polar Clock Menu](./screenshots/polar-menu.png)
-
-![Polar Clock](./screenshots/polar-clock.png)
-
-## Links
+## Dev Links
 
 [Chrome.storage.sync example](https://gist.github.com/IzumiSy/765cfd6dc02c79de875e)
 
