@@ -1,3 +1,5 @@
+const digitalTime = document.getElementById('digitalTime');
+
 //--------------------------------------------------------------------------
 //  Point
 //--------------------------------------------------------------------------
@@ -40,6 +42,7 @@ PolarClock.prototype.start = function(interval) {
 
   setInterval(function() {
     self.step(point);
+    digitalTime.innerHTML = moment().format('HH:mm:ss');
   }, interval);
 };
 

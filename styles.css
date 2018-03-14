@@ -5,13 +5,22 @@ body {
   background-size: cover;
 }
 
-#canvas {
+#canvas-wrap {
   bottom: 0;
   left: 0;
-  margin: auto;
+  text-align: center;
   position: absolute;
   right: 0;
   top: 0;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  flex-direction: column;
+}
+
+#digitalTime {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
 }
 
 #menu {
@@ -114,10 +123,6 @@ body {
 
 .pointer:hover {
   cursor: pointer;
-}
-
-.canvas-wrap {
-  text-align: center;
 }
 
 input[type="color"] {

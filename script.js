@@ -58,7 +58,7 @@ const toggleMenu = () => {
 };
 
 document.body.onload = () => {
-  clock.start(25);
+  clock.start(1000);
 };
 
 canvas.addEventListener('click', toggleMenu);
