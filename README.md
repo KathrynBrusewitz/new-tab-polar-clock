@@ -11,6 +11,14 @@ This is just a development release. Download or clone this repo as an unpacked e
 3. Enable the developer mode at top right.
 4. Click `Load unpacked extension...` and select the source code folder.
 
+To toggle settings, just click on the clock.
+
+## Screenshots
+
+![Polar Clock Menu](./screenshots/polar-menu.png)
+
+![Polar Clock](./screenshots/polar-clock.png)
+
 ## Links
 
 [Chrome.storage.sync example](https://gist.github.com/IzumiSy/765cfd6dc02c79de875e)
@@ -18,5 +26,3 @@ This is just a development release. Download or clone this repo as an unpacked e
 [Chrome.storage API](https://developer.chrome.com/extensions/storage)
 
 [Canvas Polar Clock](https://codepen.io/pankajparashar/pen/sIpyw)
-
-[jscolor Color Picker](http://jscolor.com/)
