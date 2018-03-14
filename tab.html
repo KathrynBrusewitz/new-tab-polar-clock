@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>New Tab</title>
+  <link id="digitalFace" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -44,6 +45,28 @@
       <label for="backgroundImageURL">Background Image URL</label>
       <input id="backgroundImageURL" class="full-input" type="url" />
     </div>
+    <div class="option">
+      <input type="radio" id="positionCenter" class="pointer" name="position" value="absolute">
+      <label for="positionCenter" class="pointer">Center</label>
+      <input type="radio" id="positionBottom" class="pointer" name="position" value="relative">
+      <label for="positionBottom" class="pointer">Bottom</label>
+    </div>
+    <div class="option">
+      <input id="digitalColor" class="color pointer" type="color" />
+      <label for="digitalColor" class="pointer">Digital Color</label>
+    </div>
+    <div class="option">
+      <label for="digitalSize">Digital Size</label>
+      <input id="digitalSize" class="full-input pointer" type="range" min="10" max="200" />
+    </div>
+    <div class="option">
+      <label for="digitalOpacity">Digital Opacity</label>
+      <input id="digitalOpacity" class="full-input pointer" type="range" min="0" max="100" />
+    </div>
+    <div class="option">
+      <label for="digitalFont">Font</label>
+      <input id="digitalFont" class="full-input" type="url" />
+    </div>
     <button id="save" class="btn btn-save">Save Settings</button>
 
     <div class="attribution">
@@ -54,7 +77,7 @@
 
   <div id="canvas-wrap">
     <canvas id="canvas" class="pointer" width="400" height="400"></canvas>
-    <div id="digitalTime" width="400" height="200"></div>
+    <div id="digitalTime" class="pointer"></div>
   </div>
 
   <script src="moment.min.js"></script>
