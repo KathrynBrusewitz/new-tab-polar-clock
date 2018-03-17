@@ -57,7 +57,7 @@ input[type="color"]::-moz-color-swatch {
 
 input[type="range"] {
   -webkit-appearance: none;
-  background: #afafaf;
+  background: #bdbdbd;
   outline: none;
 }
 
