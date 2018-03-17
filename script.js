@@ -93,6 +93,8 @@ const saveSettings = () => {
 const updateMenuContent = () => {
   menuContentDigital.classList.toggle('hidden');
   menuContentPolar.classList.toggle('hidden');
+  menuTabPolar.classList.toggle('btn-active');
+  menuTabDigital.classList.toggle('btn-active');
 };
 
 const toggleMenu = () => {
