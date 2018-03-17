@@ -14,6 +14,10 @@ const digitalFace = document.getElementById('digitalFace');
 const digitalFont = document.getElementById('digitalFont');
 const digitalOpacity = document.getElementById('digitalOpacity');
 const digitalColor = document.getElementById('digitalColor');
+const menuTabPolar = document.getElementById('menu-tab-polar');
+const menuTabDigital = document.getElementById('menu-tab-digital');
+const menuContentPolar = document.getElementById('menu-content-polar');
+const menuContentDigital = document.getElementById('menu-content-digital');
 const barColor = [
   document.getElementById('second'),
   document.getElementById('minute'),
@@ -22,6 +26,7 @@ const barColor = [
   document.getElementById('date'),
   document.getElementById('month'),
 ];
+let activeTab = 'polar';
 
 const restoreSettings = () => {
   chrome.storage.sync.get({
@@ -85,8 +90,20 @@ const saveSettings = () => {
   restoreSettings();
 };
 
+const updateMenuContent = () => {
+  menuContentDigital.classList.toggle('hidden');
+  menuContentPolar.classList.toggle('hidden');
+};
+
 const toggleMenu = () => {
   menu.classList.toggle('hidden');
+};
+
+const toggleMenuContent = (tab) => {
+  if (activeTab !== tab) {
+    activeTab = tab;
+    updateMenuContent();
+  }
 };
 
 document.body.onload = () => {
@@ -102,6 +119,8 @@ document.addEventListener('DOMContentLoaded', restoreSettings);
 canvas.addEventListener('click', toggleMenu);
 digitalTime.addEventListener('click', toggleMenu);
 save.addEventListener('click', saveSettings);
+menuTabPolar.addEventListener('click', () => toggleMenuContent('polar'));
+menuTabDigital.addEventListener('click', () => toggleMenuContent('digital'));
 
 
 barColor.forEach((element, index) => {

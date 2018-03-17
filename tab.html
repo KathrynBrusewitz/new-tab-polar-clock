@@ -9,69 +9,85 @@
 <body>
 
   <div id="menu" class="hidden">
-    <div class="option">
-      <input id="second" class="color pointer" type="color" />
-      <label for="backgroundColor" class="pointer">Second</label>
+    <div id="menu-tabs">
+      <div id="menu-tab-polar" class="menu-tab">
+        <button>Polar</button>
+      </div>
+      <div id="menu-tab-digital" class="menu-tab">
+        <button>Digital</button>
+      </div>
     </div>
-    <div class="option">
-      <input id="minute" class="color pointer" type="color" />
-      <label for="backgroundColor" class="pointer">Minute</label>
-    </div>
-    <div class="option">
-      <input id="hour" class="color pointer" type="color" />
-      <label for="backgroundColor" class="pointer">Hour</label>
-    </div>
-    <div class="option">
-      <input id="weekday" class="color pointer" type="color" />
-      <label for="backgroundColor" class="pointer">Weekday</label>
-    </div>
-    <div class="option">
-      <input id="date" class="color pointer" type="color" />
-      <label for="backgroundColor" class="pointer">Date</label>
-    </div>
-    <div class="option">
-      <input id="month" class="color pointer" type="color" />
-      <label for="backgroundColor" class="pointer">Month</label>
-    </div>
-    <div class="option">
-      <input id="backgroundColor" class="color pointer" type="color" />
-      <label for="backgroundColor" class="pointer">Background Color</label>
-    </div>
-    <div class="option">
-      <label for="opacity">Opacity</label>
-      <input id="opacity" class="full-input pointer" type="range" min="0" max="100" />
-    </div>
-    <div class="option">
-      <label for="backgroundImageURL">Background Image URL</label>
-      <input id="backgroundImageURL" class="full-input" type="url" />
-    </div>
-    <div class="option">
-      <input type="radio" id="positionCenter" class="pointer" name="position" value="absolute">
-      <label for="positionCenter" class="pointer">Center</label>
-      <input type="radio" id="positionBottom" class="pointer" name="position" value="relative">
-      <label for="positionBottom" class="pointer">Bottom</label>
-    </div>
-    <div class="option">
-      <input id="digitalColor" class="color pointer" type="color" />
-      <label for="digitalColor" class="pointer">Digital Color</label>
-    </div>
-    <div class="option">
-      <label for="digitalSize">Digital Size</label>
-      <input id="digitalSize" class="full-input pointer" type="range" min="10" max="200" />
-    </div>
-    <div class="option">
-      <label for="digitalOpacity">Digital Opacity</label>
-      <input id="digitalOpacity" class="full-input pointer" type="range" min="0" max="100" />
-    </div>
-    <div class="option">
-      <label for="digitalFont">Font</label>
-      <input id="digitalFont" class="full-input" type="url" />
-    </div>
-    <button id="save" class="btn btn-save">Save Settings</button>
 
-    <div class="attribution">
-      <p><a href="https://kathrynbrusewitz.github.io/">Built by Bruk</a></p>
-      <p><a href="https://github.com/KathrynBrusewitz/polar">Fork Polar on GitHub</a></p>
+    <div id="menu-content-polar" class="menu-content">
+      <div class="option">
+        <input id="second" class="color pointer" type="color" />
+        <label for="backgroundColor" class="pointer">Second</label>
+      </div>
+      <div class="option">
+        <input id="minute" class="color pointer" type="color" />
+        <label for="backgroundColor" class="pointer">Minute</label>
+      </div>
+      <div class="option">
+        <input id="hour" class="color pointer" type="color" />
+        <label for="backgroundColor" class="pointer">Hour</label>
+      </div>
+      <div class="option">
+        <input id="weekday" class="color pointer" type="color" />
+        <label for="backgroundColor" class="pointer">Weekday</label>
+      </div>
+      <div class="option">
+        <input id="date" class="color pointer" type="color" />
+        <label for="backgroundColor" class="pointer">Date</label>
+      </div>
+      <div class="option">
+        <input id="month" class="color pointer" type="color" />
+        <label for="backgroundColor" class="pointer">Month</label>
+      </div>
+      <div class="option">
+        <label for="opacity">Opacity</label>
+        <input id="opacity" class="full-input pointer" type="range" min="0" max="100" />
+      </div>
+    </div>
+
+    <div id="menu-content-digital" class="menu-content hidden">
+      <div class="option">
+          <input type="radio" id="positionCenter" class="pointer" name="position" value="absolute">
+          <label for="positionCenter" class="pointer">Center</label>
+          <input type="radio" id="positionBottom" class="pointer" name="position" value="relative">
+          <label for="positionBottom" class="pointer">Bottom</label>
+        </div>
+        <div class="option">
+          <input id="digitalColor" class="color pointer" type="color" />
+          <label for="digitalColor" class="pointer">Digital Color</label>
+        </div>
+        <div class="option">
+          <label for="digitalSize">Digital Size</label>
+          <input id="digitalSize" class="full-input pointer" type="range" min="10" max="200" />
+        </div>
+        <div class="option">
+          <label for="digitalOpacity">Digital Opacity</label>
+          <input id="digitalOpacity" class="full-input pointer" type="range" min="0" max="100" />
+        </div>
+        <div class="option">
+          <label for="digitalFont">Font</label>
+          <input id="digitalFont" class="full-input" type="url" />
+        </div>
+    </div>
+
+    <div class="menu-content">
+      <div class="option">
+        <input id="backgroundColor" class="color pointer" type="color" />
+        <label for="backgroundColor" class="pointer">Background Color</label>
+      </div>
+      <div class="option">
+        <label for="backgroundImageURL">Background Image URL</label>
+        <input id="backgroundImageURL" class="full-input" type="url" />
+      </div>
+      <button id="save" class="btn btn-save">Save Settings</button>
+      <div class="attribution">
+        <p><a href="https://kathrynbrusewitz.github.io/">Built by Bruk</a></p>
+        <p><a href="https://github.com/KathrynBrusewitz/polar">Fork Polar on GitHub</a></p>
+      </div>
     </div>
   </div>
 
