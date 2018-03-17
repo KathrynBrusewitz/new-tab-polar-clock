@@ -18,6 +18,8 @@ const menuTabPolar = document.getElementById('menu-tab-polar');
 const menuTabDigital = document.getElementById('menu-tab-digital');
 const menuContentPolar = document.getElementById('menu-content-polar');
 const menuContentDigital = document.getElementById('menu-content-digital');
+const enableSeconds = document.getElementById('enable-seconds');
+const enable24 = document.getElementById('enable-24');
 const barColor = [
   document.getElementById('second'),
   document.getElementById('minute'),
@@ -27,6 +29,8 @@ const barColor = [
   document.getElementById('month'),
 ];
 let activeTab = 'polar';
+let currentInterval = null;
+const tick = 1000;
 
 const restoreSettings = () => {
   chrome.storage.sync.get({
@@ -97,6 +101,13 @@ const updateMenuContent = () => {
   menuTabDigital.classList.toggle('btn-active');
 };
 
+const updateTimeFormat = (timeFormat) => {
+  clearInterval(currentInterval);
+  currentInterval = setInterval(() => {
+    digitalTime.innerHTML = moment().format(timeFormat);
+  }, tick);
+};
+
 const toggleMenu = () => {
   menu.classList.toggle('hidden');
 };
@@ -104,17 +115,13 @@ const toggleMenu = () => {
 const toggleMenuContent = (tab) => {
   if (activeTab !== tab) {
     activeTab = tab;
-    updateMenuContent();
+    updateMenuContent(tab);
   }
 };
 
 document.body.onload = () => {
-  const tick = 1000;
-  const timeFormat = 'HH:mm:ss';
   clock.start(tick);
-  setInterval(() => {
-    digitalTime.innerHTML = moment().format(timeFormat);
-  }, tick);
+  updateTimeFormat('HH:mm:ss');
 };
 
 document.addEventListener('DOMContentLoaded', restoreSettings);
@@ -123,6 +130,14 @@ digitalTime.addEventListener('click', toggleMenu);
 save.addEventListener('click', saveSettings);
 menuTabPolar.addEventListener('click', () => toggleMenuContent('polar'));
 menuTabDigital.addEventListener('click', () => toggleMenuContent('digital'));
+
+enableSeconds.addEventListener('change', () => {
+  if (this.checked) {
+    updateTimeFormat('HH:mm:ss');
+  } else {
+    updateTimeFormat('HH:mm');
+  }
+});
 
 
 barColor.forEach((element, index) => {
