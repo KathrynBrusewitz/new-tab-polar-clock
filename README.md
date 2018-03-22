@@ -6,6 +6,8 @@ A simple new tab page chrome extension based on [Pankaj Parashar's Canvas Polar 
 
 ![Polar Clock New Tab 2](./screenshots/polar-tab-example-2.gif)
 
+![Polar Clock New Tab 3](./screenshots/polar-tab-example-3.gif)
+
 ## Installing
 
 This is just a development release for now. Download or clone this repo as an unpacked extension.
