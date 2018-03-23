@@ -1,3 +1,19 @@
+(function () {
+
+  if (!('indexedDB' in window)) {
+    console.log('This browser doesn\'t support IndexedDB');
+    return;
+  }
+
+  const idb = indexedDB.open('polar', 1, (upgradeDb) => {
+    if (!upgradeDb.objectStoreNames.contains('imagesOS')) {
+      const imagesOS = upgradeDb.createObjectStore('imagesOS');
+      imagesOS.createIndex('image', 'image', { unique: true });
+    }
+  });
+
+})();
+
 const canvas = document.getElementById('canvas');
 const point = new Point(200, 200, 180);
 const clock = new PolarClock(canvas, point, 15, 2);
