@@ -1,61 +1,12 @@
-
-//--------------------------------------------------------------------------
-//  Point
-//--------------------------------------------------------------------------
 /**
  * @param {Number} x canvas
  * @param {Number} y canvas
  * @param {Number} radius
  */
-const Point = (x, y, radius) => {
+const Point = function Point(x, y, radius) {
   this.x = x;
   this.y = y;
   this.radius = radius;
-};
-
-//--------------------------------------------------------------------------
-//  Polar Clock
-//--------------------------------------------------------------------------
-/**
- * @param {Object} canvas
- * @param {Point} point
- * @param {Number} line
- * @param {Number} margin
- * @param {Array.<String>} color
- */
-const PolarClock = (canvas, point, line, margin, color) => {
-  this.canvas = canvas;
-  this.context = canvas.getContext('2d');
-  this.point = point;
-  this.line = line;
-  this.margin = margin;
-  this.color = color || ['#333', '#555', '#777', '#000', '#BBB', '#999'];
-};
-
-/**
- * @param {Number} interval (ms)
- */
-PolarClock.prototype.start = (interval) => {
-  const self = this;
-  const point = this.getPoint();
-
-  setInterval(() => {
-    self.step(point);
-  }, interval);
-};
-
-/**
- * clear
- */
-PolarClock.prototype.clear = () => {
-  this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
-};
-
-/**
- * @return {Point}
- */
-PolarClock.prototype.getPoint = () => {
-  return new Point(this.point.x, this.point.y, this.point.radius);
 };
 
 /**
@@ -68,7 +19,6 @@ const getEndOfMonth = (date) => {
 
   return (month === 1 && year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) ? 29 : days[month];
 };
-
 
 /**
  * time radian
@@ -94,12 +44,55 @@ const getTimeRadian = () => {
   };
 };
 
+/**
+ * @param {Object} canvas
+ * @param {Point} point
+ * @param {Number} line
+ * @param {Number} margin
+ * @param {Array.<String>} color
+ */
+const PolarClock = function PolarClock(canvas, point, line, margin, color) {
+  this.canvas = canvas;
+  this.context = canvas.getContext('2d');
+  this.point = point;
+  this.line = line;
+  this.margin = margin;
+  this.color = color || ['#333', '#555', '#777', '#000', '#BBB', '#999'];
+};
+
+/**
+ * @param {Number} interval (ms)
+ */
+PolarClock.prototype.start = function start(interval) {
+  const self = this;
+  const point = this.getPoint();
+
+  setInterval(() => {
+    self.step(point);
+  }, interval);
+};
+
+/**
+ * clear
+ */
+PolarClock.prototype.clear = function clear() {
+  this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+};
+
+/**
+ * @return {Point}
+ */
+PolarClock.prototype.getPoint = function getPoint() {
+  return new Point(this.point.x, this.point.y, this.point.radius);
+};
 
 /**
  * @param {Point} point
  */
-PolarClock.prototype.step = (point) => {
+PolarClock.prototype.step = function step(point) {
   const now = getTimeRadian();
+  const line = this.line;
+  const margin = this.margin;
   const color = this.color;
 
   this.clear();
@@ -116,7 +109,7 @@ PolarClock.prototype.step = (point) => {
  * @param {Point} point
  * @param {Number} radian
  */
-PolarClock.prototype.draw = (index, point, radian) => {
+PolarClock.prototype.draw = function draw(index, point, radian) {
   this.point = new Point(
     point.x,
     point.y,
@@ -132,7 +125,7 @@ PolarClock.prototype.draw = (index, point, radian) => {
  * @param {Number} start
  * @param {Number} end
  */
-PolarClock.prototype.arc = (color, width, start, end) => {
+PolarClock.prototype.arc = function arc(color, width, start, end) {
   const context = this.context;
   const point = this.point;
   const x = -point.y;
