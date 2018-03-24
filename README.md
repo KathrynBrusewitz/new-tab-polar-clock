@@ -15,6 +15,8 @@ This is just a development release for now. Download or clone this repo as an un
 3. Enable the developer mode at top right.
 4. Click `Load unpacked extension...` and select the source code folder.
 
+![Polar Clock New Tab Installation](./screenshots/installation.gif)
+
 To toggle settings, just click on the clock.
 
 ## Dev Links
